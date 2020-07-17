@@ -1,13 +1,12 @@
 import React from 'react';
 import './App.css';
+import ChatWindow from './components/chat-window/chat-window.component';
 
 
 function App() {
     return (
-        <div>
-            <h2>
-                hello Messenger
-          </h2>
+        <div className='app-container'>
+            <ChatWindow />
         </div>
     )
 }

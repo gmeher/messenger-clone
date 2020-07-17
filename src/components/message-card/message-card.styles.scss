@@ -1,0 +1,16 @@
+.message-card{
+    width: fit-content;
+   margin: 10px 0px;
+   text-align: left;
+   border-radius: 5px;
+   padding: 10px;
+}
+
+.message-card__my-message{
+    background: rgba(117, 125, 232,0.3) !important;
+    margin-left: auto;
+}
+
+.message-card__friends-message{
+    background: rgba(99, 110, 114,0.1) !important;
+}
