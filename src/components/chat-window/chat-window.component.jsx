@@ -2,16 +2,21 @@ import React, { useState, useEffect } from 'react';
 import { FormControl, Button, TextField, InputLabel, Input } from '@material-ui/core';
 import './chat-window.styles.scss';
 import MessageCard from '../message-card/message-card.component';
+import db from '../../firebase';
+import firebase from 'firebase';
 
 const ChatWindow = () => {
 
     const [input, setInput] = useState('');
-    const [messages, setMessages] = useState([
-        { text: 'hello man', userName: 'gmeher1' }
-
-    ])
+    const [messages, setMessages] = useState([])
     const [userName, setUserName] = useState('');
 
+    useEffect(() => {
+        db.collection("messages").orderBy('timeStamp', 'asc').onSnapshot(snapshot => {
+            setMessages(snapshot.docs.map(doc => doc.data()))
+            window.scrollTo(0, document.body.scrollHeight)
+        })
+    }, [])
     useEffect(() => {
         setUserName(prompt('enter user name'))
     }, [])
@@ -25,7 +30,11 @@ const ChatWindow = () => {
     }
     const sendMessage = e => {
         e.preventDefault();
-        setMessages([...messages, { text: input, userName: userName }])
+        db.collection('messages').add({
+            text: input,
+            userName: userName,
+            timeStamp: firebase.firestore.FieldValue.serverTimestamp()
+        })
         setInput('')
     }
     return (
@@ -46,7 +55,7 @@ const ChatWindow = () => {
 
                 {messages.map(message => (
 
-                    <MessageCard {...message} />
+                    <MessageCard {...message} key={message.text} />
 
                 ))}
             </div>

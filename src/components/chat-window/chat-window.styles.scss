@@ -7,6 +7,17 @@
 #message-send-button{
 height: 60px;
 width: 20vw;
-float: right;
+margin-left: 10px;
 box-sizing: border-box;
+}
+
+.chat-window__input-header{
+    position: fixed;
+    bottom: 0;
+    background: #fff;
+    width: 100%;
+}
+
+.chat-window__message-box{
+    margin-bottom: 60px
 }
