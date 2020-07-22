@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { FormControl, Button, TextField, IconButton, InputLabel, Input } from '@material-ui/core';
+import { TextField, IconButton } from '@material-ui/core';
 import './chat-window.styles.scss';
 import MessageCard from '../message-card/message-card.component';
 import db from '../../firebase';
-import firebase from 'firebase';
+import firebase from 'firebase/app';
+import 'firebase/firestore';
 import FlipMove from 'react-flip-move';
 import SendIcon from '@material-ui/icons/Send';
 
@@ -18,7 +19,7 @@ const ChatWindow = ({ match }) => {
             setMessages(snapshot.docs.map(doc => ({ id: doc.id, content: doc.data() })))
             window.scrollTo(0, document.body.scrollHeight)
         })
-    }, [])
+    })
 
     useEffect(() => {
         setUserName(localStorage.getItem('userName') || prompt('enter user name'))

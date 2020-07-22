@@ -1,14 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-} from "react-router-dom";
 import db from '../firebase';
 import ChatsCard from '../components/chats-card/chats-card.component';
 import FlipMove from 'react-flip-move';
-import { Button } from '@material-ui/core';
 import AddChat from '../components/add-chat/add-chat.component';
 const ChatPage = () => {
 

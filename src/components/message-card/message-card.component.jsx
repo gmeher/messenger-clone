@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { Card, CardContent, Typography } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 import './message-card.styles.scss'
 
 const MessageCard = forwardRef((props, ref) => {

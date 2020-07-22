@@ -1,9 +1,6 @@
 import React, { forwardRef } from 'react';
-import { Card, CardActionArea, CardMedia, Typography, CardContent } from '@material-ui/core';
+import { Card, CardActionArea, Typography, CardContent } from '@material-ui/core';
 import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
     Link
 } from "react-router-dom";
 const ChatsCard = forwardRef((props, ref) => {

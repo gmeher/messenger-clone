@@ -1,8 +1,9 @@
 import React from 'react';
-import { Popover, Typography, Button, Paper, TextField, IconButton } from '@material-ui/core';
+import { Popover, Button, Paper, TextField, IconButton } from '@material-ui/core';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
 import db from '../../firebase';
-import firebase from 'firebase';
+import firebase from 'firebase/app';
+import 'firebase/firestore';
 
 const AddChat = () => {
     const [newChatRoom, setNewChatRoom] = React.useState('');
