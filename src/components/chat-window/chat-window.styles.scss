@@ -1,23 +1,23 @@
 #message-input{
     height: 60px;
     box-sizing: border-box;
-    width: 68vw;
+    width: 75vw;
 }
 
 #message-send-button{
 height: 60px;
-width: 20vw;
 margin-left: 10px;
 box-sizing: border-box;
 }
 
 .chat-window__input-header{
     position: fixed;
+    padding-bottom: 15px;
     bottom: 0;
     background: #fff;
     width: 100%;
 }
 
 .chat-window__message-box{
-    margin-bottom: 60px
+    margin-bottom: 70px
 }
